@@ -1,0 +1,6 @@
+{
+  "name": "Remix: Gravity Sling",
+  "description": "A 2D puzzle game based on Newtonian orbital mechanics. Place your ship, adjust your velocity vector, and navigate planetary gravity wells to reach the target.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

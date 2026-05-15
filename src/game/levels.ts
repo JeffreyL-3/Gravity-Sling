@@ -683,5 +683,340 @@ export const LEVELS: Level[] = [
       "noStartRadius": 300
     },
     "difficulty": 3.86
+  },
+  {
+    "id": 11,
+    "name": "Swing Around",
+    "bounds": {
+      "w": 2520,
+      "h": 1680
+    },
+    "startPosition": {
+      "x": 600,
+      "y": 840
+    },
+    "target": {
+      "position": {
+        "x": 1900,
+        "y": 840
+      },
+      "radius": 60,
+      "noStartRadius": 300
+    },
+    "bodies": [
+      {
+        "id": 1,
+        "position": {
+          "x": 1007,
+          "y": 972
+        },
+        "mass": 24800,
+        "radius": 85,
+        "color": "#1f2937"
+      },
+      {
+        "id": 2,
+        "position": {
+          "x": 901,
+          "y": 651
+        },
+        "mass": 5000,
+        "radius": 221,
+        "color": COLORS.green
+      },
+      {
+        "id": 3,
+        "position": {
+          "x": 1381,
+          "y": 627
+        },
+        "mass": 50000,
+        "radius": 80,
+        "color": "#1f2937"
+      },
+      {
+        "id": 4,
+        "position": {
+          "x": 1613,
+          "y": 963
+        },
+        "mass": 5000,
+        "radius": 142,
+        "color": COLORS.orange
+      }
+    ],
+    "difficulty": 6.35
+  },
+  {
+    "id": 12,
+    "name": "The Pinball",
+    "bounds": {
+      "w": 2520,
+      "h": 1680
+    },
+    "startPosition": {
+      "x": 400,
+      "y": 1400
+    },
+    "target": {
+      "position": {
+        "x": 2100,
+        "y": 200
+      },
+      "radius": 50,
+      "noStartRadius": 300
+    },
+    "bodies": [
+      {
+        "id": 1,
+        "position": {
+          "x": 1000,
+          "y": 1200
+        },
+        "mass": 25000,
+        "radius": 100,
+        "color": COLORS.purple
+      },
+      {
+        "id": 2,
+        "position": {
+          "x": 1500,
+          "y": 800
+        },
+        "mass": 35000,
+        "radius": 120,
+        "color": COLORS.blue
+      },
+      {
+        "id": 3,
+        "position": {
+          "x": 800,
+          "y": 500
+        },
+        "mass": 20000,
+        "radius": 90,
+        "color": COLORS.orange
+      },
+      {
+        "id": 4,
+        "position": {
+          "x": 1800,
+          "y": 1300
+        },
+        "mass": 20000,
+        "radius": 90,
+        "color": COLORS.yellow
+      }
+    ],
+    "difficulty": 1.84
+  },
+  {
+    "id": 13,
+    "name": "S-Curve",
+    "bounds": {
+      "w": 3000,
+      "h": 1680
+    },
+    "startPosition": {
+      "x": 300,
+      "y": 840
+    },
+    "target": {
+      "position": {
+        "x": 2600,
+        "y": 1400
+      },
+      "radius": 50,
+      "noStartRadius": 300
+    },
+    "bodies": [
+      {
+        "id": 1,
+        "position": {
+          "x": 1000,
+          "y": 200
+        },
+        "mass": 0,
+        "radius": 550,
+        "color": "#444"
+      },
+      {
+        "id": 2,
+        "position": {
+          "x": 1000,
+          "y": 1300
+        },
+        "mass": 30000,
+        "radius": 100,
+        "color": COLORS.blue
+      },
+      {
+        "id": 3,
+        "position": {
+          "x": 2000,
+          "y": 1480
+        },
+        "mass": 0,
+        "radius": 550,
+        "color": "#444"
+      },
+      {
+        "id": 4,
+        "position": {
+          "x": 2000,
+          "y": 380
+        },
+        "mass": 30000,
+        "radius": 100,
+        "color": COLORS.red
+      }
+    ],
+    "difficulty": 5.35
+  },
+  {
+    "id": 14,
+    "name": "Cluster",
+    "bounds": {
+      "w": 2520,
+      "h": 1680
+    },
+    "startPosition": {
+      "x": 500,
+      "y": 840
+    },
+    "target": {
+      "position": {
+        "x": 2000,
+        "y": 840
+      },
+      "radius": 40,
+      "noStartRadius": 200
+    },
+    "bodies": [
+      {
+        "id": 1,
+        "position": {
+          "x": 1250,
+          "y": 700
+        },
+        "mass": 20000,
+        "radius": 80,
+        "color": COLORS.blue
+      },
+      {
+        "id": 2,
+        "position": {
+          "x": 1350,
+          "y": 900
+        },
+        "mass": 22000,
+        "radius": 85,
+        "color": COLORS.green
+      },
+      {
+        "id": 3,
+        "position": {
+          "x": 1150,
+          "y": 950
+        },
+        "mass": 18000,
+        "radius": 75,
+        "color": COLORS.orange
+      },
+      {
+        "id": 4,
+        "position": {
+          "x": 1260,
+          "y": 400
+        },
+        "mass": 25000,
+        "radius": 90,
+        "color": COLORS.purple
+      },
+      {
+        "id": 5,
+        "position": {
+          "x": 1260,
+          "y": 1250
+        },
+        "mass": 25000,
+        "radius": 90,
+        "color": COLORS.red
+      }
+    ],
+    "difficulty": 1.59
+  },
+  {
+    "id": 15,
+    "name": "Cosmic Needle",
+    "bounds": {
+      "w": 2520,
+      "h": 1680
+    },
+    "startPosition": {
+      "x": 200,
+      "y": 840
+    },
+    "target": {
+      "position": {
+        "x": 2300,
+        "y": 840
+      },
+      "radius": 40,
+      "noStartRadius": 300
+    },
+    "bodies": [
+      {
+        "id": 1,
+        "position": {
+          "x": 600,
+          "y": 600
+        },
+        "mass": 30000,
+        "radius": 100,
+        "color": COLORS.blue
+      },
+      {
+        "id": 2,
+        "position": {
+          "x": 600,
+          "y": 1080
+        },
+        "mass": 30000,
+        "radius": 100,
+        "color": COLORS.blue
+      },
+      {
+        "id": 3,
+        "position": {
+          "x": 1260,
+          "y": 840
+        },
+        "mass": 50000,
+        "radius": 120,
+        "color": COLORS.purple
+      },
+      {
+        "id": 4,
+        "position": {
+          "x": 1900,
+          "y": 600
+        },
+        "mass": 30000,
+        "radius": 100,
+        "color": COLORS.orange
+      },
+      {
+        "id": 5,
+        "position": {
+          "x": 1900,
+          "y": 1080
+        },
+        "mass": 30000,
+        "radius": 100,
+        "color": COLORS.orange
+      }
+    ],
+    "difficulty": 2.17
   }
 ];

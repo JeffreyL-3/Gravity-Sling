@@ -599,7 +599,7 @@ export const LEVELS: Level[] = [
       "radius": 50,
       "noStartRadius": 200
     },
-    "difficulty": 3.10
+    "difficulty": 9.06
   },
   {
     "id": 10,
@@ -749,66 +749,86 @@ export const LEVELS: Level[] = [
   },
   {
     "id": 12,
-    "name": "The Pinball",
+    "name": "Tightrope",
     "bounds": {
-      "w": 2520,
-      "h": 1680
+      "w": 3000,
+      "h": 1500
     },
     "startPosition": {
-      "x": 400,
-      "y": 1400
+      "x": 200,
+      "y": 750
     },
     "target": {
       "position": {
-        "x": 2100,
-        "y": 200
+        "x": 2800,
+        "y": 750
       },
-      "radius": 50,
+      "radius": 20.5,
       "noStartRadius": 300
     },
     "bodies": [
       {
         "id": 1,
         "position": {
-          "x": 1000,
-          "y": 1200
+          "x": 700,
+          "y": 750
         },
-        "mass": 25000,
-        "radius": 100,
+        "mass": 40000,
+        "radius": 120,
         "color": COLORS.purple
       },
       {
         "id": 2,
         "position": {
-          "x": 1500,
-          "y": 800
+          "x": 1200,
+          "y": 550
         },
-        "mass": 35000,
-        "radius": 120,
-        "color": COLORS.blue
+        "mass": 39500,
+        "radius": 118,
+        "color": COLORS.red
       },
       {
         "id": 3,
         "position": {
-          "x": 800,
-          "y": 500
+          "x": 1200,
+          "y": 950
         },
-        "mass": 20000,
-        "radius": 90,
-        "color": COLORS.orange
+        "mass": 39500,
+        "radius": 118,
+        "color": COLORS.red
       },
       {
         "id": 4,
         "position": {
-          "x": 1800,
-          "y": 1300
+          "x": 1700,
+          "y": 755
         },
-        "mass": 20000,
-        "radius": 90,
-        "color": COLORS.yellow
+        "mass": 44750,
+        "radius": 139,
+        "color": COLORS.purple
+      },
+      {
+        "id": 5,
+        "position": {
+          "x": 2200,
+          "y": 550
+        },
+        "mass": 39500,
+        "radius": 118,
+        "color": COLORS.blue
+      },
+      {
+        "id": 6,
+        "position": {
+          "x": 2200,
+          "y": 950
+        },
+        "mass": 39500,
+        "radius": 118,
+        "color": COLORS.blue
       }
     ],
-    "difficulty": 1.84
+    "difficulty": 3.47
   },
   {
     "id": 13,
@@ -875,92 +895,72 @@ export const LEVELS: Level[] = [
   },
   {
     "id": 14,
-    "name": "Cluster",
+    "name": "Triple Trouble",
     "bounds": {
-      "w": 2520,
-      "h": 1680
+      "w": 1920,
+      "h": 1080
     },
     "startPosition": {
-      "x": 500,
-      "y": 840
+      "x": 300,
+      "y": 540
     },
     "target": {
       "position": {
-        "x": 2000,
-        "y": 840
+        "x": 1332.6654740608228,
+        "y": 542.5760286225402
       },
-      "radius": 40,
-      "noStartRadius": 200
+      "radius": 60,
+      "noStartRadius": 300
     },
     "bodies": [
       {
-        "id": 1,
+        "id": 1778868736085,
         "position": {
-          "x": 1250,
-          "y": 700
+          "x": 565.0089445438282,
+          "y": 181.93202146690518
         },
-        "mass": 20000,
-        "radius": 80,
-        "color": COLORS.blue
+        "mass": 40800,
+        "radius": 46,
+        "color": "#f97316"
       },
       {
-        "id": 2,
+        "id": 1778868743734,
         "position": {
-          "x": 1350,
-          "y": 900
+          "x": 1167.7996422182468,
+          "y": 195.67084078711986
         },
-        "mass": 22000,
-        "radius": 85,
-        "color": COLORS.green
+        "mass": 42300,
+        "radius": 54,
+        "color": "#ef4444"
       },
       {
-        "id": 3,
+        "id": 1778868751068,
         "position": {
-          "x": 1150,
-          "y": 950
+          "x": 1480.3577817531304,
+          "y": 704.0071556350625
         },
-        "mass": 18000,
-        "radius": 75,
-        "color": COLORS.orange
-      },
-      {
-        "id": 4,
-        "position": {
-          "x": 1260,
-          "y": 400
-        },
-        "mass": 25000,
-        "radius": 90,
-        "color": COLORS.purple
-      },
-      {
-        "id": 5,
-        "position": {
-          "x": 1260,
-          "y": 1250
-        },
-        "mass": 25000,
-        "radius": 90,
-        "color": COLORS.red
+        "mass": 44500,
+        "radius": 66,
+        "color": "#eab308"
       }
     ],
-    "difficulty": 1.59
+    "difficulty": 8.06
   },
   {
     "id": 15,
-    "name": "Cosmic Needle",
+    "name": "Oblivion",
     "bounds": {
-      "w": 2520,
-      "h": 1680
+      "w": 2500,
+      "h": 1500
     },
     "startPosition": {
       "x": 200,
-      "y": 840
+      "y": 750
     },
     "target": {
       "position": {
-        "x": 2300,
-        "y": 840
+        "x": 2400,
+        "y": 750
       },
       "radius": 40,
       "noStartRadius": 300
@@ -970,53 +970,63 @@ export const LEVELS: Level[] = [
         "id": 1,
         "position": {
           "x": 600,
-          "y": 600
+          "y": 750
         },
-        "mass": 30000,
+        "mass": 35000,
         "radius": 100,
         "color": COLORS.blue
       },
       {
         "id": 2,
         "position": {
-          "x": 600,
-          "y": 1080
+          "x": 1200,
+          "y": 500
         },
-        "mass": 30000,
-        "radius": 100,
-        "color": COLORS.blue
+        "mass": 25000,
+        "radius": 80,
+        "color": COLORS.purple
       },
       {
         "id": 3,
         "position": {
-          "x": 1260,
-          "y": 840
+          "x": 1200,
+          "y": 1000
         },
-        "mass": 50000,
-        "radius": 120,
-        "color": COLORS.purple
+        "mass": 25000,
+        "radius": 80,
+        "color": COLORS.orange
       },
       {
         "id": 4,
         "position": {
           "x": 1900,
-          "y": 600
+          "y": 750
         },
-        "mass": 30000,
-        "radius": 100,
-        "color": COLORS.orange
+        "mass": 38000,
+        "radius": 110,
+        "color": COLORS.red
       },
       {
         "id": 5,
         "position": {
-          "x": 1900,
-          "y": 1080
+          "x": 2250,
+          "y": 550
         },
-        "mass": 30000,
-        "radius": 100,
-        "color": COLORS.orange
+        "mass": 22000,
+        "radius": 50,
+        "color": COLORS.blue
+      },
+      {
+        "id": 6,
+        "position": {
+          "x": 2250,
+          "y": 950
+        },
+        "mass": 22000,
+        "radius": 50,
+        "color": COLORS.green
       }
     ],
-    "difficulty": 2.17
+    "difficulty": 11.02
   }
 ];

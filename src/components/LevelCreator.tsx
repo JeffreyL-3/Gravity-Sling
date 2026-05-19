@@ -35,6 +35,7 @@ export default function LevelCreator({ onClose }: LevelCreatorProps) {
   const [selectedBodyId, setSelectedBodyId] = useState<number | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [gameState, setGameState] = useState<'SETUP' | 'PLAYING' | 'WON' | 'LOST'>('SETUP');
+  const [testSessionId, setTestSessionId] = useState(0);
 
   const [isCheckingPossible, setIsCheckingPossible] = useState(false);
   const [checkProgress, setCheckProgress] = useState(0);
@@ -47,6 +48,10 @@ export default function LevelCreator({ onClose }: LevelCreatorProps) {
 
   const handleTestLevel = () => {
      setPlayTargetVelocity(null);
+     if (!isPlaying) {
+         setGameState('SETUP');
+         setTestSessionId(prev => prev + 1);
+     }
      setIsPlaying(!isPlaying);
   };
 
@@ -54,6 +59,7 @@ export default function LevelCreator({ onClose }: LevelCreatorProps) {
      if (solutionVelocity) {
          setPlayTargetVelocity(solutionVelocity);
          setGameState('PLAYING');
+         setTestSessionId(prev => prev + 1);
          setIsPlaying(true);
      }
   };
@@ -530,6 +536,7 @@ export default function LevelCreator({ onClose }: LevelCreatorProps) {
         {isPlaying ? (
            <div className="w-full h-full relative">
              <GameCanvas 
+               key={testSessionId}
                level={level}
                gameState={gameState}
                setGameState={setGameState}

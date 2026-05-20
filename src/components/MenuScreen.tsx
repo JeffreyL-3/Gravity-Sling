@@ -27,26 +27,26 @@ export default function MenuScreen({ onPlay, onSelectLevel, onCreator, currentLe
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="z-10 flex flex-col items-center gap-12"
+        className="z-10 flex flex-col items-center gap-6 sm:gap-8 md:gap-12 px-4 w-full"
       >
-        <div className="flex flex-col items-center gap-4">
-          <h1 className="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 tracking-tighter shadow-sm text-center">
+        <div className="flex flex-col items-center gap-1 sm:gap-4 w-full">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 tracking-tighter shadow-sm text-center">
             GRAVITY SLING
           </h1>
-          <p className="text-blue-200/60 font-mono text-lg md:text-xl tracking-widest uppercase">
+          <p className="text-blue-200/60 font-mono text-xs sm:text-lg md:text-xl tracking-widest uppercase text-center">
             Orbital Mechanics Puzzle
           </p>
-          <p className="text-blue-200/80 font-mono text-xl md:text-2xl font-bold tracking-widest mt-2">
+          <p className="text-blue-200/80 font-mono text-sm sm:text-xl md:text-2xl font-bold tracking-widest mt-1 sm:mt-2 text-center">
             Created by Jeffrey Liu
           </p>
         </div>
 
-        <div className="flex flex-col gap-6 w-full max-w-sm">
+        <div className="flex flex-col gap-3 sm:gap-6 w-full max-w-sm">
           <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={onPlay}
-            className="w-full py-4 px-8 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold text-xl tracking-wide shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all border border-white/10"
+            className="w-full py-2.5 sm:py-4 px-8 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-bold text-lg sm:text-xl tracking-wide shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all border border-white/10"
           >
             PLAY
           </motion.button>
@@ -55,7 +55,7 @@ export default function MenuScreen({ onPlay, onSelectLevel, onCreator, currentLe
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => setIsLevelSelectorOpen(true)}
-            className="w-full py-4 px-8 rounded-xl bg-white/5 hover:bg-white/10 text-cyan-200 font-bold text-xl tracking-wide transition-all border border-white/10 backdrop-blur-sm"
+            className="w-full py-2.5 sm:py-4 px-8 rounded-xl bg-white/5 hover:bg-white/10 text-cyan-200 font-bold text-lg sm:text-xl tracking-wide transition-all border border-white/10 backdrop-blur-sm"
           >
             MISSIONS
           </motion.button>
@@ -64,7 +64,7 @@ export default function MenuScreen({ onPlay, onSelectLevel, onCreator, currentLe
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={onCreator}
-            className="w-full py-4 px-8 rounded-xl bg-white/5 hover:bg-white/10 text-blue-200 font-bold text-xl tracking-wide transition-all border border-white/10 backdrop-blur-sm"
+            className="w-full py-2.5 sm:py-4 px-8 rounded-xl bg-white/5 hover:bg-white/10 text-blue-200 font-bold text-lg sm:text-xl tracking-wide transition-all border border-white/10 backdrop-blur-sm"
           >
             LEVEL EDITOR
           </motion.button>

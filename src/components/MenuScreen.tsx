@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LEVELS } from '../game/levels';
-import { X } from 'lucide-react';
+import { X, Check } from 'lucide-react';
 
 interface MenuScreenProps {
   onPlay: () => void;
   onSelectLevel: (index: number) => void;
   onCreator: () => void;
   currentLevelIndex: number;
+  completedLevels: number[];
 }
 
-export default function MenuScreen({ onPlay, onSelectLevel, onCreator, currentLevelIndex }: MenuScreenProps) {
+export default function MenuScreen({ onPlay, onSelectLevel, onCreator, currentLevelIndex, completedLevels }: MenuScreenProps) {
   const [isLevelSelectorOpen, setIsLevelSelectorOpen] = useState(false);
 
   return (
@@ -102,11 +103,20 @@ export default function MenuScreen({ onPlay, onSelectLevel, onCreator, currentLe
                         flex flex-col text-left p-4 rounded-xl border transition-all duration-200
                         ${currentLevelIndex === index
                             ? 'bg-blue-900/40 border-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.3)]' 
-                            : 'bg-gray-800/50 border-gray-700 hover:bg-gray-800 hover:border-gray-500'}
+                            : completedLevels.includes(l.id)
+                                ? 'bg-green-900/20 border-green-700/50 hover:bg-green-900/40 hover:border-green-500'
+                                : 'bg-gray-800/50 border-gray-700 hover:bg-gray-800 hover:border-gray-500'}
                       `}
                     >
                        <div className="flex justify-between items-center w-full mb-1">
-                          <span className="text-sm font-bold text-gray-400 uppercase tracking-widest">Level {l.id}</span>
+                          <span className="text-sm font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
+                             Level {l.id}
+                             {completedLevels.includes(l.id) && (
+                                <span className="flex items-center justify-center w-4 h-4 bg-green-500/20 rounded-full">
+                                   <Check size={12} className="text-green-400" />
+                                </span>
+                             )}
+                          </span>
                           {currentLevelIndex === index && <span className="text-xs font-bold bg-blue-500/20 text-blue-400 px-2 py-1 rounded-sm uppercase">Current</span>}
                        </div>
                        <div className="flex justify-between items-center w-full">

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import GameCanvas from './components/GameCanvas';
 import HUD from './components/HUD';
 import LevelCreator from './components/LevelCreator';
@@ -19,6 +19,14 @@ export default function App() {
   const [showTrajectory, setShowTrajectory] = useState(true);
   const [trajectoryLength, setTrajectoryLength] = useState(150);
   const [appMode, setAppMode] = useState<'MENU' | 'GAME' | 'CREATOR'>('MENU');
+  
+  const [completedLevels, setCompletedLevels] = useState<number[]>(() => {
+    try {
+      const stored = localStorage.getItem('gravity-sling-completed');
+      if (stored) return JSON.parse(stored);
+    } catch(e) {}
+    return [];
+  });
 
   const level = LEVELS[currentLevelIndex];
 
@@ -26,7 +34,19 @@ export default function App() {
     setGameState(newState);
     if (msg) setMessage(msg);
     else setMessage('');
-  }, []);
+    
+    if (newState === 'WON') {
+      const levelId = LEVELS[currentLevelIndex].id;
+      setCompletedLevels(prev => {
+        if (!prev.includes(levelId)) {
+          const updated = [...prev, levelId];
+          localStorage.setItem('gravity-sling-completed', JSON.stringify(updated));
+          return updated;
+        }
+        return prev;
+      });
+    }
+  }, [currentLevelIndex]);
 
   const handlePlay = () => {
     setGameState('PLAYING');
@@ -62,6 +82,7 @@ export default function App() {
         }}
         onCreator={() => setAppMode('CREATOR')} 
         currentLevelIndex={currentLevelIndex}
+        completedLevels={completedLevels}
       />
     );
   }

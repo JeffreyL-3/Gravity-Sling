@@ -128,7 +128,7 @@ export default function App() {
         <h2 className="text-2xl sm:text-3xl font-black uppercase tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 mb-2">Rotate Device</h2>
         <p className="text-gray-400 font-mono text-sm sm:text-base max-w-xs mx-auto">This game requires landscape orientation for the best experience.</p>
       </div>
-      <div className="portrait:hidden landscape:block w-full h-screen">
+      <div className="portrait:hidden landscape:block w-full min-h-screen h-[100dvh] overflow-y-auto overflow-x-hidden">
         {renderAppContent()}
       </div>
     </>

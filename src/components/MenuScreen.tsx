@@ -36,6 +36,9 @@ export default function MenuScreen({ onPlay, onSelectLevel, onCreator, currentLe
           <p className="text-blue-200/60 font-mono text-lg md:text-xl tracking-widest uppercase">
             Orbital Mechanics Puzzle
           </p>
+          <p className="text-blue-200/80 font-mono text-xl md:text-2xl font-bold tracking-widest mt-2">
+            Created by Jeffrey Liu
+          </p>
         </div>
 
         <div className="flex flex-col gap-6 w-full max-w-sm">

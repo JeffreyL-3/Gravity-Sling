@@ -13,6 +13,7 @@ interface MenuScreenProps {
 
 export default function MenuScreen({ onPlay, onSelectLevel, onCreator, currentLevelIndex, completedLevels }: MenuScreenProps) {
   const [isLevelSelectorOpen, setIsLevelSelectorOpen] = useState(false);
+  const [isPhysicsModalOpen, setIsPhysicsModalOpen] = useState(false);
 
   return (
     <div className="w-full h-full min-h-screen bg-[#070b14] overflow-y-auto overflow-x-hidden relative flex flex-col items-center justify-center font-sans py-4 sm:py-8">
@@ -67,6 +68,15 @@ export default function MenuScreen({ onPlay, onSelectLevel, onCreator, currentLe
             className="w-full py-2.5 sm:py-4 [@media(max-height:500px)]:py-2 px-8 rounded-xl bg-white/5 hover:bg-white/10 text-blue-200 font-bold text-lg sm:text-xl [@media(max-height:500px)]:text-base tracking-wide transition-all border border-white/10 backdrop-blur-sm"
           >
             LEVEL EDITOR
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => setIsPhysicsModalOpen(true)}
+            className="w-full py-2.5 sm:py-4 [@media(max-height:500px)]:py-2 px-8 rounded-xl bg-purple-900/20 hover:bg-purple-900/40 text-purple-200/80 hover:text-purple-200 font-bold text-lg sm:text-xl [@media(max-height:500px)]:text-base tracking-wide transition-all border border-purple-500/20 backdrop-blur-sm"
+          >
+            THE PHYSICS BEHIND IT ALL
           </motion.button>
         </div>
       </motion.div>
@@ -132,6 +142,68 @@ export default function MenuScreen({ onPlay, onSelectLevel, onCreator, currentLe
                        </div>
                     </button>
                  ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Physics Modal */}
+      <AnimatePresence>
+        {isPhysicsModalOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm pointer-events-auto"
+          >
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", bounce: 0, duration: 0.3 }}
+              className="bg-gray-900 border border-gray-700 rounded-2xl w-full max-w-lg max-h-[85vh] flex flex-col shadow-2xl"
+            >
+              <div className="flex justify-between items-center p-6 border-b border-gray-800">
+                 <h3 className="text-xl sm:text-2xl font-black uppercase tracking-widest text-[#a855f7]">The Physics Behind it All</h3>
+                 <button 
+                    onClick={() => setIsPhysicsModalOpen(false)}
+                    className="text-gray-400 hover:text-white transition-colors bg-gray-800 hover:bg-gray-700 p-2 rounded-full"
+                 >
+                   <X size={24} />
+                 </button>
+              </div>
+              
+              <div className="flex-1 overflow-y-auto p-6 sm:p-8 flex flex-col gap-6 sm:gap-8">
+                <section>
+                    <h4 className="text-lg font-bold text-gray-200 mb-2 uppercase tracking-wide">Gravitational Force</h4>
+                    <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                      Planets attract your ship with a force given by Newton's law:<br/>
+                      <span className="inline-block mt-2 font-mono bg-black/50 px-3 py-1.5 rounded-md text-cyan-300 border border-white/5">F = G(m₁m₂)/r²</span>
+                    </p>
+                </section>
+                
+                <section>
+                    <h4 className="text-lg font-bold text-gray-200 mb-2 uppercase tracking-wide">Acceleration</h4>
+                    <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                      Gravity causes acceleration, changing your velocity according to:<br/>
+                      <span className="inline-block mt-2 font-mono bg-black/50 px-3 py-1.5 rounded-md text-blue-300 border border-white/5">F = ma</span>
+                    </p>
+                </section>
+                
+                <section>
+                    <h4 className="text-lg font-bold text-gray-200 mb-2 uppercase tracking-wide">Gravity Assist</h4>
+                    <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                      A close pass curves your path. Use the slingshot effect to reach new places.
+                    </p>
+                </section>
+
+                <section>
+                    <h4 className="text-lg font-bold text-gray-200 mb-2 uppercase tracking-wide">Conservation of Energy</h4>
+                    <p className="text-gray-400 leading-relaxed text-sm sm:text-base">
+                      Your kinetic + potential energy stays constant.
+                    </p>
+                </section>
               </div>
             </motion.div>
           </motion.div>
